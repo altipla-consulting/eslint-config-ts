@@ -9,8 +9,6 @@ module.exports = {
   ],
   parserOptions: {
     parser: '@typescript-eslint/parser',
-    ecmaVersion: 11,
-    sourceType: 'module',
   },
   ignorePatterns: ['*.css'],
   rules: {
