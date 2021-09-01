@@ -1,6 +1,6 @@
 {
   "name": "@altipla/eslint-config-ts",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "ESLint configuration for Typescript projects.",
   "main": "src/index.js",
   "files": [
