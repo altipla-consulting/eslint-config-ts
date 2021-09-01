@@ -15,7 +15,7 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  ignorePatterns: ['*.css'],
+  ignorePatterns: ['*.css', '/*.*'],
   rules: {
     'indent': 'off',
     '@typescript-eslint/indent': ['error', 2],
@@ -57,5 +57,4 @@ module.exports = {
   plugins: [
     '@typescript-eslint',
   ],
-  ignorePatterns: ['/*.*'],
 }
