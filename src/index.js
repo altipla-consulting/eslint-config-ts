@@ -1,3 +1,4 @@
+
 module.exports = {
   env: {
     browser: true,
@@ -6,31 +7,55 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    parser: '@typescript-eslint/parser',
     ecmaVersion: 11,
     sourceType: 'module',
+    project: './tsconfig.json',
   },
   ignorePatterns: ['*.css'],
   rules: {
-    'indent': ['error', 2],
+    'indent': 'off',
+    '@typescript-eslint/indent': ['error', 2],
+
     'linebreak-style': ['error', 'unix'],
-    'quotes': ['error', 'single', { allowTemplateLiterals: true }],
-    'semi': ['error', 'never'],
-    'comma-dangle': ['error', 'always-multiline'],
-    'dot-notation': 'error',
+
+    'quotes': 'off',
+    '@typescript-eslint/quotes': ['error', 'single', { allowTemplateLiterals: true }],
+
+    'semi': 'off',
+    '@typescript-eslint/semi': ['error', 'never'],
+
+    'comma-dangle': 'off',
+    '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
+
+    'dot-notation': 'off',
+    '@typescript-eslint/dot-notation': 'error',
+
     'eol-last': 'error',
     'key-spacing': 'error',
-    'keyword-spacing': ['error', { before: true, after: true }],
+
+    'keyword-spacing': 'off',
+    '@typescript-eslint/keyword-spacing': ['error', { before: true, after: true }],
+
     'no-undef': 'error',
     'space-before-blocks': 'error',
     'space-infix-ops': 'error',
-    'object-curly-spacing': ['error', 'always'],
+
+    'object-curly-spacing': 'off',
+    '@typescript-eslint/object-curly-spacing': ['error', 'always'],
+
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '_', argsIgnorePattern: '_' }],
+
+    'prefer-const': 'off',
+
+    '@typescript-eslint/no-explicit-any': 'off',
   },
   plugins: [
     '@typescript-eslint',
   ],
+  ignorePatterns: ['/*.*'],
 }
