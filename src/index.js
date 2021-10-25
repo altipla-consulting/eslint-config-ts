@@ -16,6 +16,10 @@ module.exports = {
     project: './tsconfig.json',
   },
   ignorePatterns: ['*.css', '/*.*'],
+
+  // Some of the rules have Typescript equivalents that should be used instead.
+  // To check whether a replacement exists or not go to this page:
+  //   https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/README.md#supported-rules
   rules: {
     'indent': 'off',
     '@typescript-eslint/indent': ['error', 2],
@@ -40,7 +44,9 @@ module.exports = {
     'keyword-spacing': 'off',
     '@typescript-eslint/keyword-spacing': ['error', { before: true, after: true }],
 
-    'no-undef': 'error',
+    // Typescript compiler already checks this type of errors.
+    'no-undef': 'off',
+    
     'space-before-blocks': 'error',
     'space-infix-ops': 'error',
 
@@ -53,6 +59,11 @@ module.exports = {
     'prefer-const': 'off',
 
     '@typescript-eslint/no-explicit-any': 'off',
+
+    'no-var': 'error',
+
+    'comma-spacing': 'off',
+    '@typescript-eslint/comma-spacing': ['error', { before: false, after: true }],
   },
   plugins: [
     '@typescript-eslint',
