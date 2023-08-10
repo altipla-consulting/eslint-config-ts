@@ -66,6 +66,10 @@ module.exports = {
     '@typescript-eslint/comma-spacing': ['error', { before: false, after: true }],
 
     '@typescript-eslint/no-non-null-assertion': 'off',
+
+    '@typescript-eslint/no-floating-promises': 'error',
+    '@typescript-eslint/await-thenable': 'error',
+    '@typescript-eslint/no-misused-promises': 'error',
   },
   plugins: [
     '@typescript-eslint',
