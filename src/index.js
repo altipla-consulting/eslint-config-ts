@@ -69,7 +69,17 @@ module.exports = {
 
     '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/await-thenable': 'error',
-    '@typescript-eslint/no-misused-promises': 'error',
+    
+    '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: { arguments: false } }],
+    'spaced-comment': ['error', 'always'],
+    'no-trailing-spaces': ['error', { skipBlankLines: true }],
+    'func-call-spacing': 'off',
+    '@typescript-eslint/func-call-spacing': ['error', 'never'],
+    'arrow-parens': ['error', 'as-needed'],
+    'function-paren-newline': ['error', 'consistent'],
+    'space-in-parens': ['error', 'never'],
+    'array-bracket-spacing': ['error', 'never'],
+    'no-confusing-arrow': ['error', { allowParens: false }],
   },
   plugins: [
     '@typescript-eslint',
