@@ -26,17 +26,8 @@ module.exports = {
 
     'linebreak-style': ['error', 'unix'],
 
-    'quotes': 'off',
-    '@typescript-eslint/quotes': ['error', 'single', { allowTemplateLiterals: true }],
-
-    'semi': 'off',
-    '@typescript-eslint/semi': ['error', 'never'],
-
     'comma-dangle': 'off',
     '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
-
-    'dot-notation': 'off',
-    '@typescript-eslint/dot-notation': 'error',
 
     'eol-last': 'error',
     'key-spacing': 'error',
@@ -44,15 +35,37 @@ module.exports = {
     'keyword-spacing': 'off',
     '@typescript-eslint/keyword-spacing': ['error', { before: true, after: true }],
 
-    // Typescript compiler already checks this type of errors.
-    'no-undef': 'off',
-    
     'space-before-blocks': 'error',
     'space-infix-ops': 'error',
 
     'object-curly-spacing': 'off',
     '@typescript-eslint/object-curly-spacing': ['error', 'always'],
 
+    'comma-spacing': 'off',
+    '@typescript-eslint/comma-spacing': ['error', { before: false, after: true }],
+
+    'quotes': 'off',
+    '@typescript-eslint/quotes': ['error', 'single', { allowTemplateLiterals: true }],
+
+    'semi': 'off',
+    '@typescript-eslint/semi': ['error', 'never'],
+
+    'dot-notation': 'off',
+    '@typescript-eslint/dot-notation': 'error',
+
+    'spaced-comment': ['error', 'always'],
+    'no-trailing-spaces': ['error', { skipBlankLines: true }],
+
+    'func-call-spacing': 'off',
+    '@typescript-eslint/func-call-spacing': ['error', 'never'],
+
+    'function-paren-newline': ['error', 'consistent'],
+    'space-in-parens': ['error', 'never'],
+    'array-bracket-spacing': ['error', 'never'],
+    
+    // Typescript compiler already checks this type of errors.
+    'no-undef': 'off',
+    
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '_', argsIgnorePattern: '_' }],
 
@@ -62,23 +75,13 @@ module.exports = {
 
     'no-var': 'error',
 
-    'comma-spacing': 'off',
-    '@typescript-eslint/comma-spacing': ['error', { before: false, after: true }],
-
     '@typescript-eslint/no-non-null-assertion': 'off',
 
     '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/await-thenable': 'error',
-    
     '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: { arguments: false } }],
-    'spaced-comment': ['error', 'always'],
-    'no-trailing-spaces': ['error', { skipBlankLines: true }],
-    'func-call-spacing': 'off',
-    '@typescript-eslint/func-call-spacing': ['error', 'never'],
+
     'arrow-parens': ['error', 'as-needed'],
-    'function-paren-newline': ['error', 'consistent'],
-    'space-in-parens': ['error', 'never'],
-    'array-bracket-spacing': ['error', 'never'],
     'no-confusing-arrow': ['error', { allowParens: false }],
   },
   plugins: [
