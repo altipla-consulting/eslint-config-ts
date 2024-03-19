@@ -15,7 +15,7 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  ignorePatterns: ['*.css', '/*.*'],
+  ignorePatterns: ['*.css'],
 
   // Some of the rules have Typescript equivalents that should be used instead.
   // To check whether a replacement exists or not go to this page:
