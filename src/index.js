@@ -27,7 +27,7 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
 
     'comma-dangle': 'off',
-    '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
+    '@typescript-eslint/comma-dangle': 'off',
 
     'eol-last': 'error',
     'key-spacing': 'error',
