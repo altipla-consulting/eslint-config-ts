@@ -1,91 +1,86 @@
+import ts from 'typescript-eslint'
+import globals from 'globals'
+import js from '@eslint/js'
 
-module.exports = {
-  env: {
-    browser: true,
-    es2020: true,
-    node: true,
+export default ts.config(js.configs.recommended, ...ts.configs.recommended, {
+  files: ['**/*.ts', '**/*.tsx'],
+  plugins: {
+    '@typescript-eslint': ts.plugin,
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-  ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
+  ignores: ['dist', 'tmp', 'src/env.d.ts'],
+  languageOptions: {
+    globals: {
+      ...globals.browser,
+      ...globals.node,
+    },
+    parser: ts.parser,
     ecmaVersion: 11,
     sourceType: 'module',
-    project: './tsconfig.json',
+    parserOptions: {
+      project: ['./tsconfig.json'],
+    },
   },
-  ignorePatterns: ['*.css'],
-
-  // Some of the rules have Typescript equivalents that should be used instead.
-  // To check whether a replacement exists or not go to this page:
-  //   https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/README.md#supported-rules
   rules: {
-    'indent': 'off',
+    indent: 'off',
     '@typescript-eslint/indent': ['off'],
-
     'linebreak-style': ['error', 'unix'],
-
-    'comma-dangle': 'off',
-    '@typescript-eslint/comma-dangle': 'off',
-
     'eol-last': 'error',
     'key-spacing': 'error',
-
-    'keyword-spacing': 'off',
-    '@typescript-eslint/keyword-spacing': ['error', { before: true, after: true }],
-
+    curly: 'error',
     'space-before-blocks': 'error',
     'space-infix-ops': 'error',
-
-    'object-curly-spacing': 'off',
-    '@typescript-eslint/object-curly-spacing': ['error', 'always'],
-    'curly': 'error',
-
-    'comma-spacing': 'off',
-    '@typescript-eslint/comma-spacing': ['error', { before: false, after: true }],
-
-    'quotes': 'off',
-    '@typescript-eslint/quotes': ['error', 'single', { allowTemplateLiterals: true }],
-
-    'semi': 'off',
-    '@typescript-eslint/semi': ['error', 'never'],
-
+    'spaced-comment': ['error', 'always'],
+    'function-paren-newline': ['error', 'consistent'],
+    'arrow-parens': 'off',
+    'space-in-parens': ['error', 'never'],
+    'no-trailing-spaces': [
+      'error',
+      {
+        skipBlankLines: true,
+      },
+    ],
+    'array-bracket-spacing': ['error', 'never'],
+    semi: ['error', 'never'],
+    'comma-dangle': 'off',
+    '@typescript-eslint/comma-dangle': 'off',
     'dot-notation': 'off',
     '@typescript-eslint/dot-notation': 'error',
-
-    'spaced-comment': ['error', 'always'],
-    'no-trailing-spaces': ['error', { skipBlankLines: true }],
-
-    'func-call-spacing': 'off',
-    '@typescript-eslint/func-call-spacing': ['error', 'never'],
-
-    'function-paren-newline': ['error', 'consistent'],
-    'space-in-parens': ['error', 'never'],
-    'array-bracket-spacing': ['error', 'never'],
-    
-    // Typescript compiler already checks this type of errors.
     'no-undef': 'off',
-    
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '_', argsIgnorePattern: '_' }],
-
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        varsIgnorePattern: '_',
+        argsIgnorePattern: '_',
+      },
+    ],
     'prefer-const': 'off',
-
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-unnecessary-type-assertion': 'error',
-
     'no-var': 'error',
-
     '@typescript-eslint/no-non-null-assertion': 'off',
-
     '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/await-thenable': 'error',
-    '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: { arguments: false } }],
-    
-    'no-confusing-arrow': ['error', { allowParens: false }],
+    '@typescript-eslint/no-misused-promises': [
+      'error',
+      {
+        checksVoidReturn: {
+          arguments: false,
+        },
+      },
+    ],
+    'no-confusing-arrow': [
+      'error',
+      {
+        allowParens: false,
+      },
+    ],
+    'no-restricted-imports': [
+      'error',
+      {
+        name: 'lodash',
+        message: 'Please use lodash-es instead.',
+      },
+    ],
   },
-  plugins: [
-    '@typescript-eslint',
-  ],
-}
+})
