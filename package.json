@@ -24,8 +24,10 @@
     "access": "public"
   },
   "dependencies": {
-    "eslint": "^9.9.1",
     "globals": "^15.9.0",
     "typescript-eslint": "^8.3.0"
+  },
+  "peerDependencies": {
+    "eslint": "9.x"
   }
 }
