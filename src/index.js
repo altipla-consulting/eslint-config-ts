@@ -53,8 +53,9 @@ export default ts.config(
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
-          varsIgnorePattern: "_",
-          argsIgnorePattern: "_",
+          varsIgnorePattern: '^_',
+          argsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
         },
       ],
       "prefer-const": "off",
