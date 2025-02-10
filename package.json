@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "globals": "^15.9.0",
-    "typescript-eslint": "^8.3.0"
+    "typescript-eslint": "^8.23.0"
   },
   "peerDependencies": {
     "eslint": "9.x"
