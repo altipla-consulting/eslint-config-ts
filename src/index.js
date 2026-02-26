@@ -64,7 +64,7 @@ export default ts.config(
       "no-var": "error",
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/no-floating-promises": "error",
-      '@typescript-eslint/no-unnecessary-condition': 'error',
+      '@typescript-eslint/no-unnecessary-condition': ['error', { allowConstantLoopConditions: 'only-allowed-literals' }],
       "@typescript-eslint/await-thenable": "error",
       "@typescript-eslint/no-misused-promises": [
         "error",
